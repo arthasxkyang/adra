@@ -463,7 +463,7 @@ var Room = {
 		);
 		
 		Room.pathDiscovery = Boolean($SM.get('stores["compass"]'));
-	
+
 		if(Engine._debug) {
 			this._ROOM_WARM_DELAY = 5000;
 			this._BUILDER_STATE_DELAY = 5000;
@@ -541,7 +541,7 @@ var Room = {
 			Engine.setTimeout(Room.unlockForest, Room._NEED_WOOD_DELAY);
 		}
 		Engine.setTimeout($SM.collectIncome, 1000);
-	
+
 		Notifications.notify(Room, _("the room is {0}", Room.TempEnum.fromInt($SM.get('game.temperature.value')).text));
 		Notifications.notify(Room, _("the fire is {0}", Room.FireEnum.fromInt($SM.get('game.fire.value')).text));
 	},
@@ -872,11 +872,11 @@ var Room = {
 		if(newRow) {
 			Room.updateIncomeView();
 		}
-	
+
 		if($("div#outsidePanel").length) {
 			Outside.updateVillage();
 		}
-	
+
 		if($SM.get('stores.compass') && !Room.pathDiscovery){
 			Room.pathDiscovery = true;
 			Path.openPath();
